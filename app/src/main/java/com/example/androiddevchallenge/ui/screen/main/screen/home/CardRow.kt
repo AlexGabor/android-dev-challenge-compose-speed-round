@@ -46,12 +46,12 @@ data class CardItem(
 )
 
 val cardItems = listOf(
-    CardItem(R.drawable.overwhelmed, R.string.screen_home),
-    CardItem(R.drawable.stress, R.string.screen_home),
-    CardItem(R.drawable.nature_med, R.string.screen_home),
-    CardItem(R.drawable.short_mantras, R.string.screen_home),
-    CardItem(R.drawable.self_massage, R.string.screen_home),
-    CardItem(R.drawable.overwhelmed, R.string.screen_home),
+    CardItem(R.drawable.overwhelmed, R.string.card1),
+    CardItem(R.drawable.stress, R.string.card2),
+    CardItem(R.drawable.nature_med, R.string.card3),
+    CardItem(R.drawable.short_mantras, R.string.card4),
+    CardItem(R.drawable.self_massage, R.string.card5),
+    CardItem(R.drawable.overwhelmed, R.string.card6),
 )
 
 @Composable
