@@ -10,4 +10,32 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+
+    <string name="screen_home">home</string>
+    <string name="screen_profile">profile</string>
+    <string name="logo_content_description">logo</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log in</string>
+
+    <string name="card1">Short mantras</string>
+    <string name="card2">Stress and Anxiety</string>
+    <string name="card3">Overwhelmed</string>
+    <string name="card4">Nature meditations</string>
+    <string name="card5">Self-massage</string>
+    <string name="card6">Nightly wind down</string>
+
+    <string name="body1">Inversions</string>
+    <string name="body2">Quick Yoga</string>
+    <string name="body3">Stretching</string>
+    <string name="body4">Tabata</string>
+    <string name="body5">HIIT</string>
+    <string name="body6">Pre-natal yoga</string>
+
+    <string name="mind1">Meditate</string>
+    <string name="mind2">With Kids</string>
+    <string name="mind3">Aromatherap</string>
+    <string name="mind4">On the go</string>
+    <string name="mind5">With pets</string>
+    <string name="mind6">High Stress</string>
+
 </resources>
