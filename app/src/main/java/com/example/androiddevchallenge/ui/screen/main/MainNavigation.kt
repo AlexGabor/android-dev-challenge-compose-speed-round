@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 @file:JvmName("MainKt")
 
 package com.example.androiddevchallenge.ui.screen.main
@@ -5,7 +20,6 @@ package com.example.androiddevchallenge.ui.screen.main
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.requiredSize
@@ -18,7 +32,6 @@ import androidx.compose.material.Colors
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.primarySurface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -40,7 +53,7 @@ import com.example.androiddevchallenge.ui.components.AppBottomNavigation
 import com.example.androiddevchallenge.ui.screen.main.screen.Profile
 import com.example.androiddevchallenge.ui.screen.main.screen.home.Home
 import dev.chrisbanes.accompanist.insets.navigationBarsPadding
-import java.util.*
+import java.util.Locale
 
 val items = listOf(
     HomeScreen.Home,
@@ -94,8 +107,9 @@ fun MainNavigator() {
             }
         }
 
-        Button(shape = CircleShape,
-            colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primaryContent ),
+        Button(
+            shape = CircleShape,
+            colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primaryContent),
             onClick = {},
             modifier = Modifier
                 .navigationBarsPadding()
@@ -107,7 +121,8 @@ fun MainNavigator() {
                         // Where the composable gets placed
                         placeable.place(0, -placeable.height / 2)
                     }
-                }) {
+                }
+        ) {
             Image(
                 painter = painterResource(id = R.drawable.ic_play),
                 contentDescription = "play",
@@ -118,6 +133,5 @@ fun MainNavigator() {
         }
     }
 }
-
 
 val Colors.primaryContent: Color get() = if (isLight) primary else onBackground
