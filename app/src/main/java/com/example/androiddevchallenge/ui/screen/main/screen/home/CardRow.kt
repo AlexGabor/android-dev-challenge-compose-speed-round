@@ -15,9 +15,7 @@
  */
 package com.example.androiddevchallenge.ui.screen.main.screen.home
 
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -35,23 +33,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
+import dev.chrisbanes.accompanist.coil.CoilImage
 
 data class CardItem(
-    @DrawableRes val image: Int,
+    val image: String,
     @StringRes val text: Int
 )
 
 val cardItems = listOf(
-    CardItem(R.drawable.overwhelmed, R.string.card1),
-    CardItem(R.drawable.stress, R.string.card2),
-    CardItem(R.drawable.nature_med, R.string.card3),
-    CardItem(R.drawable.short_mantras, R.string.card4),
-    CardItem(R.drawable.self_massage, R.string.card5),
-    CardItem(R.drawable.overwhelmed, R.string.card6),
+    CardItem("https://images.pexels.com/photos/2533712/pexels-photo-2533712.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", R.string.card1),
+    CardItem("https://images.pexels.com/photos/1557238/pexels-photo-1557238.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", R.string.card2),
+    CardItem("https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", R.string.card3),
+    CardItem("https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", R.string.card4),
+    CardItem("https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", R.string.card5),
+    CardItem("https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", R.string.card6),
 )
 
 @Composable
@@ -82,7 +80,6 @@ fun CardRow(
 
 @Composable
 fun Card(item: CardItem) {
-    val image = painterResource(id = item.image)
     val text = stringResource(id = item.text)
 
     Surface(
@@ -92,11 +89,11 @@ fun Card(item: CardItem) {
         shape = MaterialTheme.shapes.small,
     ) {
         Row {
-            Image(
-                painter = image,
+            CoilImage(
+                data = item.image,
                 contentDescription = text,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.size(56.dp)
+                modifier = Modifier.size(56.dp),
             )
             Text(
                 text = text, style = MaterialTheme.typography.h3,
