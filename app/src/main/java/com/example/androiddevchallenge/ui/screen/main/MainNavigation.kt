@@ -109,7 +109,7 @@ fun MainNavigator() {
 
         Button(
             shape = CircleShape,
-            colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primaryContent),
+            colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primary),
             onClick = {},
             modifier = Modifier
                 .navigationBarsPadding()
@@ -126,9 +126,7 @@ fun MainNavigator() {
             Image(
                 painter = painterResource(id = R.drawable.ic_play),
                 contentDescription = "play",
-                colorFilter = ColorFilter.tint(
-                    LocalContentColor.current
-                )
+                colorFilter = ColorFilter.tint(LocalContentColor.current)
             )
         }
     }
